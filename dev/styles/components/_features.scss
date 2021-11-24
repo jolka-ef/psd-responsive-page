@@ -1,0 +1,59 @@
+.features-link {
+  align-items: baseline;
+  display: flex;
+  font-size: 1em;
+  justify-content: space-between;
+  margin-top: 1em;
+
+  &:hover {
+    color:$color-text-features-link-hover;
+  }
+}
+
+.features-arrow {
+  font-size: 0.75em;
+}
+
+.features-component {
+  background: $color-background-features linear-gradient(119deg, rgba(255, 255, 255, .42), rgba(0, 0, 0, .42));
+  font-size: 0.75rem;
+  padding: 5em 2.25em 4.5em;
+
+  &__content {
+    color: $color-text-features-content;
+    display: table-row;
+  }
+
+  &__header {
+    color: $color-text-features-header;
+    display: table-row;
+    font-size: 1.666em;
+    & span {
+      display: table-row;
+    }
+  }
+}
+
+@include set-query(small) {
+  .features-component {
+    @include scale-property-to-query(small, (
+             font-size (0.75rem),
+    ));
+  }
+}
+
+@include set-query(medium) {
+  .features-component {
+    @include scale-property-to-query(medium, (
+             font-size (0.75rem),
+    ));
+  }
+}
+
+@include set-query(large) {
+  .features-component {
+    @include scale-property-to-query(large, (
+             font-size (0.75rem),
+    ));
+  }
+}

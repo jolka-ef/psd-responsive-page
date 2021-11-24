@@ -1,0 +1,53 @@
+.banner-component {
+  display: flex;
+  font-size:0.5rem;
+
+  &__container {
+    background-color: $color-background-banner;
+    padding: 4em 3.375em;
+    width: 77.5%;
+  }
+
+  &__header {
+    color:$color-text-banner;
+    font-size: 1.25em;
+  }
+}
+
+.banner-link {
+  background-color: $color-background-banner-button;
+  color:$color-banner-button;
+  display:flex;
+  font-size: 1.5em;
+  justify-content: center;
+  align-items: center;
+  width:22.5%;
+
+  &:hover {
+    color:$color-text-banner-button-hover;
+  }
+}
+
+@include set-query(small) {
+  .banner-component {
+    @include scale-property-to-query(small, (
+             font-size (0.5rem),
+    ));
+  }
+}
+
+@include set-query(medium) {
+  .banner-component {
+    @include scale-property-to-query(medium, (
+             font-size (0.5rem),
+    ));
+  }
+}
+
+@include set-query(large) {
+  .banner-component {
+    @include scale-property-to-query(large, (
+             font-size (0.5rem),
+    ));
+  }
+}
