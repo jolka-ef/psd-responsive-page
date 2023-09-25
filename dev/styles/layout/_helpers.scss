@@ -1,0 +1,22 @@
+.button-unstyled {
+  background-color: transparent;
+  border:0;
+  color:inherit;
+  padding: 0;
+  cursor: pointer;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+.icon {
+  display: inherit;
+  fill:currentColor;
+  height: 1em;
+  width: 1em;
+}
+
+.no-scroll {
+  overflow: hidden;
+}

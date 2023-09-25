@@ -1,0 +1,8 @@
+$drawer-transition-duration: 0.3s;
+$drawer-transition-timing-function: cubic-bezier(.17,.67,.13,1.11);
+$header-drawer-width: 17.5em;
+$header-info-font-size: 0.75em;
+$header-padding: 0.75em 0.85em;
+$header-drawerToggle-shadow: 0 -0.1em 0 0.85em; // depends on header padding
+$shifted-transform: translate3d(-$header-drawer-width,0,0);
+$shifted-transition: transform $drawer-transition-duration $drawer-transition-timing-function;

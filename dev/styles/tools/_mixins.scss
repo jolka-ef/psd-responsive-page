@@ -1,0 +1,38 @@
+@import "var/breakpoints";
+@import "var/scalars";
+
+/**
+ * Setting media query according to given breakpoint name.
+ * @param {string} $name - Name of specific breakpoint from $breakpoints.
+ */
+
+@mixin set-query($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content
+    }
+  }
+  @else {
+    @error 'Sorry but there is is no "#{$name}" value in $breakpoints'
+  }
+}
+
+/**
+ * Scaling given properties according to given scalar.
+ * @param {string} $scalar - Value from $scalars var.
+ * @param {list} $pairs - Pair of values (property-name (property-values))
+ */
+
+@mixin scale-property-to-query($scalar, $pairs) {
+  @if map_has_key($scalars, $scalar) {
+    $scalar: map-get($scalars, $scalar);
+    @each $pair in $pairs {
+      $property: nth($pair, 1);
+      $values: nth($pair, 2);
+      @each $value in $values {
+        $values: set-nth($values, index($values, $value), $value*$scalar);
+      }
+      #{$property}: $values;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.owl-prev,
+.owl-next {
+  margin-top: -16px; // Half of the prev/next buttons height here in negatives to center them perfectly
+  position: absolute;
+  top: 50%;
+}
+.owl-prev {
+  left: 0;
+}
+.owl-next {
+  right: 0;
+}
+.owl-theme .owl-nav [class*=owl-] {
+  color:#ffffff;
+  font-size: 2em;
+
+  &:hover {
+    color: $color-text-hover;
+  }
+}
